@@ -47,7 +47,7 @@ export default function Home() {
             <Head >
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
             </Head>
-            <div className="pt-12" style={{ backgroundColor: "#FAFAFA" }}>
+            <div style={{ backgroundColor: "#FAFAFA", paddingTop : "200px" }}>
                 <div className="flex flex-col items-center">
                     <div className="text-4xl font-bold leading-10"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
@@ -60,7 +60,7 @@ export default function Home() {
                     <div className="flex flex-col items-center">
                         <div className="text-4xl font-black leading-10"> DivSwap is DeFi 2.0</div>
                     </div>
-                    <div className="flex flex-row justify-between px-40 flex-wrap">
+                    <div className="flex flex-row justify-around flex-wrap">
                         <DivSwapis title="DeFi 2.0 is Community" src="./community.svg">
                             DeFi 2.0 is full of energy! We don't take
                             ourselves too seriously (that's for TradFi!) So we sprinkle in a healthy dose of
@@ -87,12 +87,12 @@ export default function Home() {
             </div>
             <div className="mt-14">
                 <DotTitle>Your Funds are SAFU!</DotTitle>
-                <div className="mt-20 flex flex-row justify-between px-36 flex-wrap">
+                <div className="mt-20 flex flex-row justify-around flex-wrap">
                     <img src="./pec.svg" ></img>
                     <img src="./a logo.svg"></img>
                     <img src="./gnosis safe.svg"></img>
                 </div>
-                <div className="mt-7 flex flex-row justify-between px-36 flex-wrap">
+                <div className="mt-7 flex flex-row justify-around flex-wrap">
                     <img src="./either.svg"></img>
                     <img src="./ctdsec.svg"></img>
                     <img src="./immu.svg" ></img>
@@ -101,12 +101,12 @@ export default function Home() {
             </div>
             <div className="mt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokens</DotTitle>
-                <div className="mt-20 flex flex-row justify-between px-36 img1">
+                <div className="mt-20 flex flex-row justify-around img1 flex-wrap">
                     <div className="flex flex-col">
-                        <div className="flex flex-row flex-wrap">
+                        <div className="flex flex-row flex-wrap justify-around">
                             <img src="community.svg" style={{ width: "125px" }}></img>
                             <div className="flex items-center">
-                                <div className="font1 pl-10 text-5xl justify-center">NOVA</div>
+                                <div className="font1 pl-10 text-5xl">NOVA</div>
                             </div>
                         </div>
                         <div className="font-bold text-2xl pt-14">
@@ -114,10 +114,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <div className="flex flex-row flex-wrap">
+                        <div className="flex flex-row flex-wrap justify-around">
                             <img src="dNova.svg" style={{ width: "125px" }}></img>
                             <div className="flex items-center">
-                                <div className="font1 pl-10 text-5xl justify-center">dNOVA</div>
+                                <div className="font1 pl-10 text-5xl">dNOVA</div>
                             </div>
                         </div>
                         <div className="font-bold text-2xl pt-14">
@@ -126,9 +126,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="pt-28 px-36" style={{ backgroundColor: "#FAFAFA" }}>
+            <div className="pt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokenomics</DotTitle>
-                <div className="flex flex-row justify-between pt-7 flex-wrap">
+                <div className="flex flex-row justify-around pt-7 flex-wrap">
                     <div className="flex flex-col">
                         <div style={{ width: "311px" }}>
                             <Pie data={data} />
@@ -183,7 +183,7 @@ export default function Home() {
                         <div className="flex flex-col pr-12 flex-1 text-right">
                             <div className=" text-2xl font-black">Pre-sale</div>
                             <div className="flex justify-end">
-                                <div className=" text-xs pt-2.5" style = {{maxWidth : "220px"}}>Pre-sale of the NOVA token to raise funds for initial liquidity and audits.</div>
+                                <div className=" text-xs pt-2.5" style={{ maxWidth: "220px" }}>Pre-sale of the NOVA token to raise funds for initial liquidity and audits.</div>
                             </div>
 
                         </div>
@@ -192,22 +192,28 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="mt-28 mx-40 text-white" style={{ backgroundColor: "#4D4D4D" }}>
-                <div className="flex flex-row justify-between mx-12 pt-6 flex-wrap">
-                    <div className="border-solid border-b-4 border-light-blue pb-8 w-1/2">Get in touch with us:</div>
-                    <div style={{ width: "110px" }}>Quick Links</div>
-                </div>
-                <div className="flex flex-row justify-between mx-12 pt-10 ">
-                    <div className="pb-8 flex flex-row flex-wrap">
-                        <img src="facebook.svg" className="pr-8"></img>
-                        <img src="twitter.svg" className="pr-8"></img>
-                        <img src="instg.svg" className="pr-8"></img>
-                        <img src="teleg.svg" className="pr-8"></img>
+            <div className="mt-28 text-white" style={{ backgroundColor: "#4D4D4D" }}>
+                <div className="flex flex-row justify-around pt-6 flex-wrap">
+                    <div className="flex flex-col w-1/2">
+                        <div className="border-solid border-b-4 border-light-blue pb-8" style={{ width: "100%" }}>Get in touch with us:</div>
+                        <div className="pt-5 flex flex-row flex-wrap">
+                            <img src="facebook.svg" className="pr-8"></img>
+                            <img src="twitter.svg" className="pr-8"></img>
+                            <img src="instg.svg" className="pr-8"></img>
+                            <img src="teleg.svg" className="pr-8"></img>
+                        </div>
                     </div>
-                    <div className="flex flex-col leading-4" style={{ width: "110px" }}>
-                        <div>Terms</div>
+                    <div className="flex flex-col">
+                        <div>Quick Links</div>
+                        <div className="mt-10">Terms</div>
                         <div>Privacy</div>
                         <div>Documentation</div>
+                    </div>
+                </div>
+                <div className="flex flex-row justify-around pt-10 ">
+
+                    <div className="flex flex-col leading-4" style={{ width: "110px" }}>
+
                     </div>
                 </div>
             </div>
