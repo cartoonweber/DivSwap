@@ -1,0 +1,19 @@
+.divswap {
+    margin: 51px 597px 0px 590px
+}
+
+.global {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    color : #4D4D4D;
+}
+.font1{
+    color : #5BC2C9;
+}
+.back1{
+    background-color: #C4C4C4;
+}
+.img1>img{
+    width : 370px;
+    height : 109px;
+}
