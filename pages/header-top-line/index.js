@@ -3,6 +3,7 @@ import './styles.module.css';
 import React, { useState, useEffect, useMemo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import { Collapse, CardText, Card } from "reactstrap";
 
 function getWindowDimensions() {
   let width, height;
@@ -57,6 +58,7 @@ export default function Home() {
   const screenWidth = useWindowDimensions().width;
   const [isMobile, setIsMobile] = useState(false);
   const [isNav, setIsNav] = useState(false);
+  const [collapseOpen, setCollapseOpen] = React.useState(false);
   const scroll = useWindowScroll().scroll;
   let navbar;
   useEffect(() => {
@@ -68,13 +70,30 @@ export default function Home() {
   if (isMobile)
     navbar = (
       <div className="mt-12" >
-        <div className="flex py-6 flex-row justify-around fixed top-0 w-full z-20" style={{ backgroundColor: "#FAFAFA" }}>
-          <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
-          <div></div>
-          <a href className="text-2xl leading-7">
-            <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
-          </a>
+        <div className="flex  flex-col fixed top-0 w-full z-20" style={{ backgroundColor: "#FAFAFA" }}>
+          <div className="flex flex-row justify-around py-6">
+            <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
+            <div></div>
+            <a href="#" className="text-2xl leading-7" onClick={(e) => {
+              e.preventDefault();
+              setCollapseOpen(!collapseOpen);
+            }}>
+              <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
+            </a>
+          </div>
+          <div style={{ display: collapseOpen ? "" : "none" }}>
+            <div className={"flex-1 flex z-20 flex-row font-black text-1xl"}
+              style={{ backgroundColor: "#FAFAFA" }}>
+              <div className="flex-1 flex-col flex text-center">
+                <hr /><div className="py-2">TOKENS</div><hr />
+                <div className="py-2">ROADMAP</div><hr />
+                <div className="font1 underline py-2">DOCS</div><hr />
+                <div className="font1 underline py-2">SOCIALS</div><hr />
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     )
   else

@@ -63,7 +63,7 @@ const TimeLine = ({ children }) => {
         setHeight(temp);
     }, [screenWidth]);
     useEffect(() => {
-        console.log(document.getElementById("tb").scrollTop);
+        console.log(document.getElementById("tb").window);
         //  scroll > 40 ? setIsNav(true) : setIsNav(false);
     }, [scroll]);
     if (isMobile) font = "text-1xl";
