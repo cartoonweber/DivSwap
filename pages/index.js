@@ -131,7 +131,7 @@ export default function Home() {
                 <DotTitle>Tokenomics</DotTitle>
                 <div className="flex flex-row justify-around pt-7 flex-wrap">
                     <div className="flex flex-col">
-                        <div style={{ width: "311px" }}>
+                        <div style={{ width: "310px" }}>
                             <Pie data={data} />
                         </div>
                         <div className="font-bold text-xl mt-10">Pre-minted tokens distribution (100,000)</div>
@@ -147,7 +147,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <div style={{ width: "311px" }}>
+                        <div style={{ width: "310px" }}>
                             <Pie data={data1} />
                         </div>
                         <div className="font-bold text-xl mt-10 ml-4">Allocation of Funds</div>

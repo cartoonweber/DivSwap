@@ -60,7 +60,7 @@ export default function Home() {
   const scroll = useWindowScroll().scroll;
   let navbar;
   useEffect(() => {
-    screenWidth > 650 ? setIsMobile(false) : setIsMobile(true);
+    screenWidth > 1000 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
   useEffect(() => {
     scroll > 40 ? setIsNav(true) : setIsNav(false);
@@ -72,26 +72,29 @@ export default function Home() {
           <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
           <div></div>
           <a href className="text-2xl leading-7">
-          <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
           </a>
         </div>
       </div>
     )
   else
     navbar = (
-      <div className="mt-12 pt-6 flex flex-row z-20" style={{ backgroundColor: "#FAFAFA" }}>
-        <div className="flex-none pl-20">
+      <div className="mt-12 pt-6 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }}>
+        <div className="flex-1 pl-20">
           <a href="#"><img src='logo.svg' />
             <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
           </a>
         </div>
 
-        <div className={isNav ? "flex-1 z-20 py-6 flex flex-row justify-around font-black text-2xl leading-7 flex-wrap fixed top-0 w-full z-10" : "flex-1 flex flex-row justify-around font-black text-2xl flex-wrap"}
-          style={{ paddingLeft: isNav ? "238px" : "0px", backgroundColor: "#FAFAFA" }}>
-          <div>TOKENS</div>
-          <div>ROADMAP</div>
-          <div className="font1 underline">DOCS</div>
-          <div className="font1 underline">SOCIALS</div>
+        <div className={isNav ? "z-20 py-6 flex flex-row font-black text-2xl leading-7 pr-20 fixed top-0 w-full" : "flex-1 pr-20 flex z-20 flex-row font-black text-2xl"}
+          style={{ backgroundColor: "#FAFAFA" }}>
+          {isNav && <div className="flex-1 pl-20"></div>}
+          <div className="flex-1 flex-row flex justify-around">
+            <div>TOKENS</div>
+            <div>ROADMAP</div>
+            <div className="font1 underline">DOCS</div>
+            <div className="font1 underline">SOCIALS</div>
+          </div>
         </div>
       </div >
     )
