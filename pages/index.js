@@ -2,6 +2,7 @@ import Head from 'next/head'
 import DivSwapis from '../components/DivSwapis'
 import { Line, Pie } from 'react-chartjs-2';
 import DotTitle from '../components/DotTitle';
+import TimeLine from '../components/TimeLine';
 const data = {
     datasets: [{
         data: [90000, 10000],
@@ -47,7 +48,7 @@ export default function Home() {
             <Head >
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
             </Head>
-            <div style={{ backgroundColor: "#FAFAFA", paddingTop : "200px" }}>
+            <div  style={{ backgroundColor: "#FAFAFA" , paddingTop : "70px"}}>
                 <div className="flex flex-col items-center">
                     <div className="text-4xl font-bold leading-10"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
@@ -170,27 +171,7 @@ export default function Home() {
             <div className="border-bottom-4 border-solid border mt-20" style={{ borderColor: "#F3F3F3" }}></div>
             <div className="mt-24">
                 <DotTitle>Roadmap</DotTitle>
-                <div className="flex flex-col">
-                    <div className="flex flex-row pt-14">
-                        <div className="font1  pr-12 text-2xl font-black flex-1 text-right">MAY 2021</div>
-                        <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 flex-shrink-0 mt-1" style={{ borderColor: "red" }}></div>
-                        <div className="flex flex-col pl-12 flex-1">
-                            <div className=" text-2xl font-black">Medium article</div>
-                            <div className=" text-xs pt-2.5">Laying down our mission and vision.</div>
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-center">
-                        <div className="flex flex-col pr-12 flex-1 text-right">
-                            <div className=" text-2xl font-black">Pre-sale</div>
-                            <div className="flex justify-end">
-                                <div className=" text-xs pt-2.5" style={{ maxWidth: "220px" }}>Pre-sale of the NOVA token to raise funds for initial liquidity and audits.</div>
-                            </div>
-
-                        </div>
-                        <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 flex-shrink-0 " style={{ borderColor: "red" }}></div>
-                        <div className="font1  pl-12 text-2xl font-black flex-1">JUNE 2021</div>
-                    </div>
-                </div>
+                <TimeLine></TimeLine>
             </div>
             <div className="mt-28 text-white" style={{ backgroundColor: "#4D4D4D" }}>
                 <div className="flex flex-row justify-around pt-6 flex-wrap">

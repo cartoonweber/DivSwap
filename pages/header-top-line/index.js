@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import './styles.module.css';
 import React, { useState, useEffect, useMemo } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 
 function getWindowDimensions() {
   let width, height;
@@ -28,27 +30,74 @@ function useWindowDimensions() {
 
   return windowDimensions;
 }
+function getWindowScroll() {
+  let scroll;
+  if (typeof window !== "undefined") {
+    scroll = window.scrollY;
+  }
+  return {
+    scroll
+  };
+}
+function useWindowScroll() {
+  const [windowScroll, setWindowScroll] = useState(getWindowScroll());
 
+  useEffect(() => {
+    function handlescroll() {
+      setWindowScroll(getWindowScroll());
+    }
+
+    window.addEventListener('scroll', handlescroll);
+    return () => window.removeEventListener('scroll', handlescroll);
+  }, []);
+
+  return windowScroll;
+}
 export default function Home() {
   const screenWidth = useWindowDimensions().width;
   const [isMobile, setIsMobile] = useState(false);
-
+  const [isNav, setIsNav] = useState(false);
+  const scroll = useWindowScroll().scroll;
+  let navbar;
   useEffect(() => {
     screenWidth > 650 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
-  return (
-    <div className=" mt-12 pt-6 flex flex-row fixed top-0 z-10 w-full" style={{ backgroundColor: "#FAFAFA" }}>
-      {!isMobile && <div className="flex-none pl-20">
-        <a href="#"><img src='logo.svg' />
-          <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
-        </a>
-      </div>}
-      <div className="flex-1 flex flex-row justify-around font-black text-2xl leading-7 flex-wrap">
-        <div>TOKENS</div>
-        <div>ROADMAP</div>
-        <div className="font1 underline">DOCS</div>
-        <div className="font1 underline">SOCIALS</div>
+  useEffect(() => {
+    scroll > 40 ? setIsNav(true) : setIsNav(false);
+  }, [scroll]);
+  if (isMobile)
+    navbar = (
+      <div className="mt-12" >
+        <div className="flex py-6 flex-row justify-around fixed top-0 w-full z-20" style={{ backgroundColor: "#FAFAFA" }}>
+          <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
+          <div></div>
+          <a href className="text-2xl leading-7">
+          <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
+          </a>
+        </div>
       </div>
-    </div>
+    )
+  else
+    navbar = (
+      <div className="mt-12 pt-6 flex flex-row z-20" style={{ backgroundColor: "#FAFAFA" }}>
+        <div className="flex-none pl-20">
+          <a href="#"><img src='logo.svg' />
+            <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
+          </a>
+        </div>
+
+        <div className={isNav ? "flex-1 z-20 py-6 flex flex-row justify-around font-black text-2xl leading-7 flex-wrap fixed top-0 w-full z-10" : "flex-1 flex flex-row justify-around font-black text-2xl flex-wrap"}
+          style={{ paddingLeft: isNav ? "238px" : "0px", backgroundColor: "#FAFAFA" }}>
+          <div>TOKENS</div>
+          <div>ROADMAP</div>
+          <div className="font1 underline">DOCS</div>
+          <div className="font1 underline">SOCIALS</div>
+        </div>
+      </div >
+    )
+  return (
+    <>
+      {navbar}
+    </>
   )
 }
