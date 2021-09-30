@@ -8,7 +8,7 @@ const TokenPie = ({ children, data, title, details, padding }) => {
             <div style={{ width: "310px" }}>
                 <Pie data={data} />
             </div>
-            <div className={"font-bold text-xl mt-10 " + padding}>{title}</div>
+            <div className={"font-bold text-xl mt-10 pietitle " + padding}>{title}</div>
             <div className="flex flex-col ml-16 ">
                 {
                     data.datasets[0].backgroundColor.map((color, i) => {
