@@ -74,11 +74,8 @@
     .stat{
         height : fit-content!important;
     }
-    .farmdata{
-        height: fit-content!important;
-    }
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1350px) {
     .dashboardpage{
         padding-top: 32px;
     }
@@ -148,8 +145,14 @@
         width : 900px !important
     }
 }
-@media screen and (max-width: 1430px) {
+@media screen and (max-width: 1500px) {
     .farmd{
         justify-content: center!important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .farmdata{
+        width : auto !important;
+        height : fit-content!important;
     }
 }

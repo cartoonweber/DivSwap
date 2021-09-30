@@ -62,7 +62,7 @@ export default function TopPage({ children, active }) {
   const menus = ["DASHBOARD", "EXCHANGE", "FARMS", "POOLS", "AUDITS", "VAULT PARTNERS", "SOCIALS"];
   let navbar;
   useEffect(() => {
-    screenWidth > 1250 ? setIsMobile(false) : setIsMobile(true);
+    screenWidth > 1350 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
   useEffect(() => {
     scroll > 40 ? setIsNav(true) : setIsNav(false);
@@ -121,28 +121,26 @@ export default function TopPage({ children, active }) {
           </a>
         </div>
 
-        <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 w-full toppage"
-          : " flex z-20 flex-row font-bold text-base w-full"}
+        <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 justify-between w-full toppage"
+          : " flex z-20 flex-row font-bold text-base w-full justify-between"}
           style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "157px" }}>
-          <div className="justify-between flex w-full">
-            <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
-              {
-                menus.map((data, i) => {
-                  return <>
-                    <Link href={"/" + data.toLowerCase()}>
-                      <a href="#" className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 px-5")}>{data}</a>
-                    </Link><hr />
-                  </>
-                })
-              }
-            </div>
-            <div className="flex">
-              <div className="items-start pt-1.5"><img src="community.svg" style={{ width: "30px" }} /></div>
-              <div className="topbutton pt-2.5 pl-2 pr-6">$0.892</div>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton active">CONNECT WALLET</a>
-              </Link>
-            </div>
+          <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
+            {
+              menus.map((data, i) => {
+                return <>
+                  <Link href={"/" + data.toLowerCase()}>
+                    <a href="#" className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 px-5")}>{data}</a>
+                  </Link><hr />
+                </>
+              })
+            }
+          </div>
+          <div className="flex">
+            <div className="items-start pt-1.5"><img src="community.svg" style={{ width: "30px" }} /></div>
+            <div className="topbutton pt-2.5 pl-2 pr-6">$0.892</div>
+            <Link href="/dashboard">
+              <a href="#" className="topbutton active">CONNECT WALLET</a>
+            </Link>
           </div>
         </div>
       </div >
