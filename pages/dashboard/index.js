@@ -7,7 +7,7 @@ const stattitle = ["NOVA Stats", "sNOVA Stats", "MoneyPot $309.09"]
 export default function dashboard() {
     return (
         <div className="relative px-16 dashboardpage" style={{ backgroundColor: "#FAFAFA" }}>
-            <HeaderTopPage />
+            <HeaderTopPage active = {0}/>
             <div className="flex justify-between flex-row dashboarddotparent">
                 <div className="pt-5 dashboarddot" style={{ paddingLeft: "50%" }}>
                     <HorizontalDot />

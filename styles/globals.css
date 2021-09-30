@@ -89,6 +89,36 @@
         justify-content: end!important;
     }
 }
+.toppage{
+    padding-right: 128px;
+}
+.stat{
+    width : 418px;
+}
+@media screen and (min-width: 1600px) {
+    .dashboardpage{
+        padding-left : 80px;
+        padding-right : 80px;
+    }
+    .toppage{
+        padding-right: 160px;
+    }
+    .stat{
+        width : 450px;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .dashboardpage{
+        padding-left : 100px;
+        padding-right : 100px;
+    }
+    .toppage{
+        padding-right: 200px;
+    }
+    .stat{
+        width : 550px;
+    }
+}
 .topbutton{
     height : fit-content;
 }
@@ -98,4 +128,25 @@
     padding: 10px 20px 10px 20px;
     background-color: #FE5E5F;
     color: white;
+}
+
+@media screen and (min-width: 1600px) {
+    .farmdata{
+        width : 700px !important
+    }
+}
+@media screen and (min-width: 1800px) {
+    .farmdata{
+        width : 800px !important
+    }
+}
+@media screen and (min-width: 2000px) {
+    .farmdata{
+        width : 900px !important
+    }
+}
+@media screen and (max-width: 1430px) {
+    .farmd{
+        justify-content: center!important;
+    }
 }

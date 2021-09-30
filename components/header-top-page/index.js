@@ -52,13 +52,14 @@ function useWindowScroll() {
 
   return windowScroll;
 }
-export default function TopPage() {
+export default function TopPage({ children, active }) {
   const screenWidth = useWindowDimensions().width;
   const [isMobile, setIsMobile] = useState(false);
   const [isNav, setIsNav] = useState(false);
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const scroll = useWindowScroll().scroll;
   const ref = useRef(null);
+  const menus = ["DASHBOARD", "EXCHANGE", "FARMS", "POOLS", "AUDITS", "VAULT PARTNERS", "SOCIALS"];
   let navbar;
   useEffect(() => {
     screenWidth > 1250 ? setIsMobile(false) : setIsMobile(true);
@@ -84,27 +85,15 @@ export default function TopPage() {
               style={{ backgroundColor: "#FAFAFA" }}>
               <div className="flex-1 flex-col flex text-center">
                 <hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2 font1">DASHBOARD</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">EXCHANGE</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">FARMS</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">POOLS</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">AUDITS</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">VAULT PARTNERS</a>
-                </Link><hr />
-                <Link href="/dashboard">
-                  <a href="#" className="py-2">SOCIALS</a>
-                </Link><hr />
+                {
+                  menus.map((data, i) => {
+                    return <>
+                      <Link href={"/" + data.toLowerCase()}>
+                        <a href="#" className={"py-2 " + (i === 0 ? "font1" : "")}>{data}</a>
+                      </Link><hr />
+                    </>
+                  })
+                }
                 <div className="flex justify-center">
                   <div className="pt-1.5"><img src="community.svg" style={{ width: "30px" }} /></div>
                   <div className="topbutton pt-2.5 pl-2 pr-6">$0.892</div>
@@ -132,32 +121,20 @@ export default function TopPage() {
           </a>
         </div>
 
-        <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 w-full pr-32"
+        <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 w-full toppage"
           : " flex z-20 flex-row font-bold text-base w-full"}
           style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "157px" }}>
           <div className="justify-between flex w-full">
             <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton active">DASHBOARD</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">EXCHANGE</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">FARMS</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">POOLS</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">AUDITS</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">VAULT PARTNERS</a>
-              </Link>
-              <Link href="/dashboard">
-                <a href="#" className="topbutton pt-2.5">SOCIALS</a>
-              </Link>
+              {
+                menus.map((data, i) => {
+                  return <>
+                    <Link href={"/" + data.toLowerCase()}>
+                      <a href="#" className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 px-5")}>{data}</a>
+                    </Link><hr />
+                  </>
+                })
+              }
             </div>
             <div className="flex">
               <div className="items-start pt-1.5"><img src="community.svg" style={{ width: "30px" }} /></div>
