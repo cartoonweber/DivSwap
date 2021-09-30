@@ -37,7 +37,7 @@ export default function farms() {
             <div className="font-black text-center text-4xl">FARMS</div>
             <div className="text-center font-black text-3xl pt-11" style={{ color: "#787878" }}>Stake LP Tokens to Earn NOVA and sNOVA</div>
             <div className="text-center font-bold text-2xl pt-3 font1">Deposit Fees are distributed to sNOVA holders</div>
-            <div className="flex justify-center pt-7">
+            <div className="flex justify-center pt-7 flex-wrap">
                 <Stacked />
                 <Active />
             </div>

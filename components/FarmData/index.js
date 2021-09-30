@@ -29,11 +29,12 @@ function useWindowDimensions() {
 }
 const Nova = ({ children, title, imgs, x, value }) => {
     const [state, setState] = useState(1);
-    const [wid, setWid] = useState(1);
+    const [wid, setWid] = useState(640);
     const mtitle = ["APR", "EARN", "Total Value Locked:"];
     const screenWidth = useWindowDimensions().width;
     useEffect(() => {
-        setWid(screenWidth / 2 - 20);
+        if (screenWidth > 1400) setWid(screenWidth / 2 - 80);
+        else if (screenWidth < 700) setWid(screenWidth - screenWidth / 10);
     }, [screenWidth]);
     return (
         <div className="border-2 px-8 py-9 farmdata" style={{ borderRadius: "55px", borderColor: "#4D4D4D", width: wid, height: "323px" }}>
