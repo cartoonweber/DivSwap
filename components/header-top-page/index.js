@@ -61,7 +61,7 @@ export default function TopPage() {
   const ref = useRef(null);
   let navbar;
   useEffect(() => {
-    screenWidth > 1200 ? setIsMobile(false) : setIsMobile(true);
+    screenWidth > 1250 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
   useEffect(() => {
     scroll > 40 ? setIsNav(true) : setIsNav(false);
@@ -134,9 +134,9 @@ export default function TopPage() {
 
         <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 w-full pr-32"
           : " flex z-20 flex-row font-bold text-base w-full"}
-          style={{ backgroundColor: "#FAFAFA" }}>
+          style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "157px" }}>
           <div className="justify-between flex w-full">
-            <div className="flex justify-between" style = {{width : "calc(100% - 350px)"}}>
+            <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
               <Link href="/dashboard">
                 <a href="#" className="topbutton active">DASHBOARD</a>
               </Link>

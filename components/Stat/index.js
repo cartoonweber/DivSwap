@@ -41,7 +41,7 @@ const Stat = ({ children, title, index }) => {
         <div className="flex text-xs px-5 py-3 border-2 border-solid text-center mt-4" style={{ borderRadius: "26px", borderColor: "#4D4D4D" }}>Next Moneypot starts rewarding at block <div className="font1">#11183980</div></div>
     )
     return (
-        <div className="border-4 stat mt-6" style={{ borderRadius: "55px", width: "418px", height: "600px", padding: "44px 36px 44px 36px", borderColor: "#4D4D4D" }}>
+        <div className="border-4 stat mb-6" style={{ borderRadius: "55px", width: "418px", height: "600px", padding: "44px 36px 44px 36px", borderColor: "#4D4D4D" }}>
             <div className="flex flex-col items-center">
                 <div className="text-3xl font-black text-center" style={{ width: index == 2 ? "150px" : "" }}>{title}</div>
                 {index == 2 && <div className="font-black">Daily ROI 0.14%</div>}

@@ -75,6 +75,11 @@
         height : fit-content!important;
     }
 }
+@media screen and (max-width: 1250px) {
+    .dashboardpage{
+        padding-top: 32px;
+    }
+}
 @media screen and (max-width: 550px) {
     .dashboarddot{
         display: none;

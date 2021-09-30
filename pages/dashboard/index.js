@@ -6,9 +6,9 @@ import Stat from '../../components/Stat';
 const stattitle = ["NOVA Stats", "sNOVA Stats", "MoneyPot $309.09"]
 export default function dashboard() {
     return (
-        <div className="relative px-16 pt-8 dashboardpage" style={{ backgroundColor: "#FAFAFA" }}>
+        <div className="relative px-16 dashboardpage" style={{ backgroundColor: "#FAFAFA" }}>
             <HeaderTopPage />
-            <div className="flex justify-between dashboarddotparent flex-row ">
+            <div className="flex justify-between flex-row dashboarddotparent">
                 <div className="pt-5 dashboarddot" style={{ paddingLeft: "50%" }}>
                     <HorizontalDot />
                 </div>
