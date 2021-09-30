@@ -112,7 +112,6 @@ export default function Home() {
           <div className="flex-1 flex-row flex justify-around">
             <a href = "#" onClick = {(e) => {
               e.preventDefault();
-              
             }}>TOKENS</a>
             <a href = "#">ROADMAP</a>
             <a href = "#" className="font1 underline">DOCS</a>

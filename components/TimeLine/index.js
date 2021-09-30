@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
+import Detail from './Detail';
 
 function getWindowDimensions() {
     let width, height;
@@ -32,7 +33,8 @@ function getWindowScroll() {
     if (typeof window !== "undefined") {
         scroll = window.scrollY;
     }
-    return {scroll
+    return {
+        scroll
     };
 }
 function useWindowScroll() {
@@ -59,88 +61,33 @@ const TimeLine = ({ children }) => {
     useEffect(() => {
         screenWidth > 800 ? setIsMobile(false) : setIsMobile(true);
     }, [screenWidth]);
-    useEffect(() => {
-        // console.log(document.getElementById("tb").window);
-        //  scroll > 40 ? setIsNav(true) : setIsNav(false);
-    }, [scroll]);
     if (isMobile) font = "text-1xl";
+    const ltitle = ["MAY 2021", "Pre-sale", "JUNE 2021", "We are live!", "", "DivSwap Nova NFT Shop!", "",];
+    const ldetail = ["", "Pre-sale of the NOVA token to raise funds for initial liquidity and audits.", "", "Launch of DivSwap dApp", "", "One-stop-shop NFT Minter +Viewer + Marketplace", "",];
+    const rtitle = ["Medium article", "JUNE 2021", "Smart contracts audits", "AUGUST 2021", "DivSwap Nova Lift Off", "","DivSwap Nova goes MultiChain"];
+    const rdetail = ["Laying down our mission and vision.", "", "Audits of the DivSwap.io smart contracts by reputable third parties.", "", "Develop novel use cases for NOVA and unveil DivSwap Nova Launchpad", "", "Build a bridge and launch DivSwap Nova across multiple chains"]
     return (
 
         <div className="flex flex-col relative">
             <div className="relative">
                 <div className="bg-black absolute border-l z-0" style={{ height: "100%", left: "50%", top: "60px", borderColor: "red" }}></div>
-                <div className="flex flex-row pt-14" >
-                    <div className={"font1  pr-12 font-black flex-1 text-right " + font} >MAY 2021</div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 mt-1" style={{ borderColor: "red" }}></div>
-                    <div className="flex flex-col pl-12 flex-1">
-                        <div className={"font-black " + font}>Medium article</div>
-                        <div className=" text-xs pt-2.5">Laying down our mission and vision.</div>
-                    </div>
-                </div>
-                <div className="flex flex-row justify-center pt-14">
-                    <div className="flex flex-col pr-12 flex-1 items-end">
-                        <div className={" font-black " + font}>Pre-sale</div>
-                        <div className="text-xs pt-2.5" style={{ maxWidth: "220px" }}>Pre-sale of the NOVA token to raise funds for initial liquidity and audits.</div>
-                    </div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 " style={{ borderColor: "red" }}></div>
-                    <div className={"font1  pl-12 font-black flex-1 " + font}>JUNE 2021</div>
-                </div>
-                <div className="flex flex-row pt-14">
-                    <div className={"font1  pr-12 font-black flex-1 text-right " + font}>JUNE 2021</div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 mt-1" style={{ borderColor: "red" }}></div>
-                    <div className="flex flex-col pl-12 flex-1">
-                        <div className={" font-black " + font}>Smart contracts audits</div>
-                        <div className=" text-xs pt-2.5">Audits of the DivSwap.io smart contracts by reputable third parties.</div>
-                    </div>
-                </div>
-                <div className="flex flex-row justify-center pt-14">
-                    <div className="flex flex-col pr-12 flex-1 text-right">
-                        <div className={" font-black " + font}>We are live!</div>
-                        <div className="flex justify-end">
-                            <div className=" text-xs pt-2.5" style={{ maxWidth: "220px" }}>Launch of DivSwap dApp</div>
-                        </div>
-                    </div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 " style={{ borderColor: "red" }}></div>
-                    <div className={"font1  pl-12 font-black flex-1 " + font}>AUGUST 2021</div>
-                </div>
-                <div className="flex flex-row pt-14">
-                    <div className="font1  pr-12 text-2xl font-black flex-1 text-right"></div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 mt-1" style={{ borderColor: "red" }}></div>
-                    <div className="flex flex-col pl-12 flex-1">
-                        <div className={" font-black " + font}>DivSwap Nova Lift Off</div>
-                        <div className=" text-xs pt-2.5">Develop novel use cases for NOVA and unveil DivSwap Nova Launchpad</div>
-                    </div>
-                </div>
-                <div className="flex flex-row justify-center pt-14">
-                    <div className="flex flex-col pr-12 flex-1 text-right">
-                        <div className={" font-black " + font}>DivSwap Nova NFT Shop!</div>
-                        <div className="flex justify-end">
-                            <div className=" text-xs pt-2.5">One-stop-shop NFT Minter +Viewer + Marketplace</div>
-                        </div>
-                    </div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 " style={{ borderColor: "red" }}></div>
-                    <div className={"font1  pr-12 font-black flex-1 text-right " + font}></div>
-                </div>
-                <div className="flex flex-row pt-14">
-                    <div className="font1  pr-12 text-2xl font-black flex-1 text-right"></div>
-                    <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 mt-1" style={{ borderColor: "red" }}></div>
-                    <div className="flex flex-col pl-12 flex-1">
-                        <div className={"font-black " + font}>DivSwap Nova goes MultiChain</div>
-                        <div className=" text-xs pt-2.5">Build a bridge and launch DivSwap Nova across multiple chains</div>
-                    </div>
-                </div>
+                {
+                    ltitle.map((data, i) => {
+                        return <Detail ltitle={ltitle[i]}
+                            ldetail={ldetail[i]}
+                            rtitle={rtitle[i]}
+                            rdetail={rdetail[i]}
+                            font={font}
+                            index={i} />
+                    })
+                }
             </div>
-            <div className="flex flex-row justify-center pt-14">
-                <div className="flex flex-col pr-12 flex-1 text-right">
-                    <div className={" font-black " + font} >DivSwap NovaDAO</div>
-                    <div className="flex justify-end">
-                        <div className=" text-xs pt-2.5" style={{ maxWidth: "250px" }}>Create a full-pledged DAO to usher the next
-                            evolution of DivSwap Nova into the future</div>
-                    </div>
-                </div>
-                <div className="rounded-full bg-red-400 w-5 h-5 border-solid border-2 z-10 flex-shrink-0 " style={{ borderColor: "red" }} ></div>
-                <div className={"font1  pr-12 font-black flex-1 text-right " + font}></div>
-            </div>
+            <Detail ltitle="DivSwap NovaDAO"
+                ldetail="Create a full-pledged DAO to usher the next evolution of DivSwap Nova into the future"
+                rtitle= ""
+                rdetail=""
+                font={font}
+                index={7} />
         </div>
     );
 };
