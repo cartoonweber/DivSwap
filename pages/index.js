@@ -5,7 +5,8 @@ import TimeLine from '../components/TimeLine';
 import Nova from '../components/Nova';
 import TokenPie from '../components/TokenPie';
 import { Line, Pie } from 'react-chartjs-2';
-import HeaderTopLine from './header-top-line';
+import HeaderTopLine from '../components/header-top-line';
+import Link from 'next/link'
 
 const piedata1 = {
     datasets: [{
@@ -57,7 +58,7 @@ export default function Home() {
                     <div className="text-4xl font-bold leading-10 title"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
                     <div className="mt-4 divswap"> EVER WONDERED WHAT LIES BEYOND THE MOON? </div>
-                    <button className="rounded-3xl border-solid border px-5 py-3 mt-8 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button>
+                    <Link href="/dashboard"><button className="rounded-3xl border-solid border px-5 py-3 mt-8 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button></Link>
                 </div>
             </div>
             <div className="pt-24 " style={{ backgroundColor: "#FAFAFA" }}>

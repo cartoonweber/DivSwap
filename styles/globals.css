@@ -61,3 +61,36 @@
         width : 600px
     }
 }
+@media screen and (max-width: 1400px) {
+    .dashboard{
+        justify-content:space-around!important;
+    }
+}
+@media screen and (max-width: 470px) {
+    .dashboardpage{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .stat{
+        height : fit-content!important;
+    }
+}
+@media screen and (max-width: 550px) {
+    .dashboarddot{
+        display: none;
+    }
+    .dashboarddotparent
+    {
+        justify-content: end!important;
+    }
+}
+.topbutton{
+    height : fit-content;
+}
+.topbutton.active
+{
+    border-radius: 21px;
+    padding: 10px 20px 10px 20px;
+    background-color: #FE5E5F;
+    color: white;
+}
