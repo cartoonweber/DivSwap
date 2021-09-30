@@ -9,3 +9,15 @@
 .back1{
     background-color: #C4C4C4;
 }
+
+@media screen and (max-width: 405px) {
+    .divswap {
+      font-size: 12px;
+    }
+    .title{
+        font-size : 26px;
+    }
+    .tokendetail{
+        text-align: center;
+    }
+}

@@ -10,13 +10,13 @@ const DotTitle = ({ children }) => {
 
     return (
 
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-row justify-center ">
             <div className="flex flex-col mt-4 mr-5">
                 <div className="rounded-full bg-red w-1 h-1" style={{ backgroundColor: "#FE5E5F" }}></div>
                 <div className="rounded-full bg-red w-1 h-1 mt-1" style={{ backgroundColor: "#FE5E5F" }}></div>
                 <div className="rounded-full bg-red w-1 h-1 mt-1" style={{ backgroundColor: "#FE5E5F" }}></div>
             </div>
-            <div className="font-black text-4xl">
+            <div className="font-black text-4xl title">
                 {children}
             </div>
             <div className="flex flex-col mt-4 ml-5">

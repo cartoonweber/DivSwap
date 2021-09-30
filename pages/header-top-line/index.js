@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import './styles.module.css';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { Collapse, CardText, Card } from "reactstrap";
@@ -60,6 +60,7 @@ export default function Home() {
   const [isNav, setIsNav] = useState(false);
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const scroll = useWindowScroll().scroll;
+  const ref = useRef(null);
   let navbar;
   useEffect(() => {
     screenWidth > 1000 ? setIsMobile(false) : setIsMobile(true);
@@ -85,10 +86,10 @@ export default function Home() {
             <div className={"flex-1 flex z-20 flex-row font-black text-1xl"}
               style={{ backgroundColor: "#FAFAFA" }}>
               <div className="flex-1 flex-col flex text-center">
-                <hr /><div className="py-2">TOKENS</div><hr />
-                <div className="py-2">ROADMAP</div><hr />
-                <div className="font1 underline py-2">DOCS</div><hr />
-                <div className="font1 underline py-2">SOCIALS</div><hr />
+                <hr /><a href = "#" className="py-2">TOKENS</a><hr />
+                <a href = "#" className="py-2 ">ROADMAP</a><hr />
+                <a href = "#" className="font1 underline py-2">DOCS</a><hr />
+                <a href = "#" className="font1 underline py-2">SOCIALS</a><hr />
               </div>
             </div>
           </div>
@@ -98,7 +99,7 @@ export default function Home() {
     )
   else
     navbar = (
-      <div className="mt-12 pt-6 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }}>
+      <div className="mt-12 pt-6 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }} ref = {ref}>
         <div className="flex-1 pl-20">
           <a href="#"><img src='logo.svg' />
             <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
@@ -109,10 +110,13 @@ export default function Home() {
           style={{ backgroundColor: "#FAFAFA" }}>
           {isNav && <div className="flex-1 pl-20"></div>}
           <div className="flex-1 flex-row flex justify-around">
-            <div>TOKENS</div>
-            <div>ROADMAP</div>
-            <div className="font1 underline">DOCS</div>
-            <div className="font1 underline">SOCIALS</div>
+            <a href = "#" onClick = {(e) => {
+              e.preventDefault();
+              
+            }}>TOKENS</a>
+            <a href = "#">ROADMAP</a>
+            <a href = "#" className="font1 underline">DOCS</a>
+            <a href = "#" className="font1 underline">SOCIALS</a>
           </div>
         </div>
       </div >

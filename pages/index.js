@@ -1,9 +1,12 @@
-import Head from 'next/head'
+
 import DivSwapis from '../components/DivSwapis'
-import { Line, Pie } from 'react-chartjs-2';
 import DotTitle from '../components/DotTitle';
 import TimeLine from '../components/TimeLine';
-const data = {
+import Nova from '../components/Nova';
+import TokenPie from '../components/TokenPie';
+import { Line, Pie } from 'react-chartjs-2';
+
+const piedata1 = {
     datasets: [{
         data: [90000, 10000],
         backgroundColor: [
@@ -21,7 +24,7 @@ const data = {
     }]
 };
 
-const data1 = {
+const piedata2 = {
     datasets: [{
         data: [60000, 20000, 50000],
         backgroundColor: [
@@ -41,25 +44,24 @@ const data1 = {
         ]
     }]
 };
-
+const fundsimgs = ["pec.svg", "a logo.svg", "gnosis safe.svg", "either.svg", "ctdsec.svg", "immu.svg"];
+const piedetail1 = ["Pre-Sale (90,000 NOVA)", "Initial Liquidity (10,000 NOVA)"];
+const piedetail2 = ["Audits ($60,000)", "Liquidity ($20,000)", "Marketing ($50,000)"];
 export default function Home() {
     return (
         <div className="relative">
-            <Head >
-                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
-            </Head>
-            <div  style={{ backgroundColor: "#FAFAFA" , paddingTop : "70px"}}>
+            <div style={{ backgroundColor: "#FAFAFA", paddingTop: "70px" }}>
                 <div className="flex flex-col items-center">
-                    <div className="text-4xl font-bold leading-10"> DivSwap </div>
+                    <div className="text-4xl font-bold leading-10 title"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
-                    <div className="mt-4"> EVER WONDERED WHAT LIES BEYOND THE MOON? </div>
+                    <div className="mt-4 divswap"> EVER WONDERED WHAT LIES BEYOND THE MOON? </div>
                     <button className="rounded-3xl border-solid border px-5 py-3 mt-8 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button>
                 </div>
             </div>
             <div className="pt-24" style={{ backgroundColor: "#FAFAFA" }}>
                 <div className="flex flex-col">
                     <div className="flex flex-col items-center">
-                        <div className="text-4xl font-black leading-10"> DivSwap is DeFi 2.0</div>
+                        <div className="text-4xl font-black leading-10 title"> DivSwap is DeFi 2.0</div>
                     </div>
                     <div className="flex flex-row justify-around flex-wrap">
                         <DivSwapis title="DeFi 2.0 is Community" src="./community.svg">
@@ -83,89 +85,39 @@ export default function Home() {
                             smallest investor to the biggest whales!
                         </DivSwapis>
                     </div>
-                    <div className="font1 underline mt-6 text-center font-black">Find out more</div>
+                    <a href="#" className="font1 underline mt-6 text-center font-black">Find out more</a>
                 </div>
             </div>
             <div className="mt-14">
                 <DotTitle>Your Funds are SAFU!</DotTitle>
-                <div className="mt-20 flex flex-row justify-around flex-wrap">
-                    <img src="./pec.svg" ></img>
-                    <img src="./a logo.svg"></img>
-                    <img src="./gnosis safe.svg"></img>
+                <div className="mt-14 flex flex-row justify-around flex-wrap">
+                    {
+                        fundsimgs.map(data => {
+                            return <img className="mt-6" src={data} ></img>
+                        })
+                    }
                 </div>
-                <div className="mt-7 flex flex-row justify-around flex-wrap">
-                    <img src="./either.svg"></img>
-                    <img src="./ctdsec.svg"></img>
-                    <img src="./immu.svg" ></img>
+                <div className="mt-8 text-center">
+                    <a href="#" className="font1 underline font-black">Find out more</a>
                 </div>
-                <div className="font1 underline mt-8 text-center font-black">Find out more</div>
             </div>
             <div className="mt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokens</DotTitle>
                 <div className="mt-20 flex flex-row justify-around img1 flex-wrap">
-                    <div className="flex flex-col">
-                        <div className="flex flex-row flex-wrap justify-around">
-                            <img src="community.svg" style={{ width: "125px" }}></img>
-                            <div className="flex items-center">
-                                <div className="font1 pl-10 text-5xl">NOVA</div>
-                            </div>
-                        </div>
-                        <div className="font-bold text-2xl pt-14">
-                            Native-token
-                        </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <div className="flex flex-row flex-wrap justify-around">
-                            <img src="dNova.svg" style={{ width: "125px" }}></img>
-                            <div className="flex items-center">
-                                <div className="font1 pl-10 text-5xl">dNOVA</div>
-                            </div>
-                        </div>
-                        <div className="font-bold text-2xl pt-14">
-                            LP Farming Reward Token
-                        </div>
-                    </div>
+                    <Nova title="NOVA" img="community.svg">Native Token</Nova>
+                    <Nova title="dNOVA" img="dnova.svg">LP Farming Reward Token</Nova>
                 </div>
             </div>
             <div className="pt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokenomics</DotTitle>
                 <div className="flex flex-row justify-around pt-7 flex-wrap">
-                    <div className="flex flex-col">
-                        <div style={{ width: "310px" }}>
-                            <Pie data={data} />
-                        </div>
-                        <div className="font-bold text-xl mt-10">Pre-minted tokens distribution (100,000)</div>
-                        <div className="flex flex-col ml-16 ">
-                            <div className="flex flex-row">
-                                <div style={{ backgroundColor: '#5BC2C9' }} className="w-3 h-3 mt-3.5 text-sm"></div>
-                                <div className="pl-4 text-sm mt-2.5">Pre-Sale (90,000 NOVA)</div>
-                            </div>
-                            <div className="flex flex-row ">
-                                <div style={{ backgroundColor: '#77F4F7', }} className="w-3 h-3 mt-3.5 text-sm"></div>
-                                <div className="pl-4 text-sm mt-2.5">Initial Liquidity (10,000 NOVA)</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <div style={{ width: "310px" }}>
-                            <Pie data={data1} />
-                        </div>
-                        <div className="font-bold text-xl mt-10 ml-4">Allocation of Funds</div>
-                        <div className="flex flex-col ml-20 ">
-                            <div className="flex flex-row">
-                                <div style={{ backgroundColor: '#C41829' }} className="w-3 h-3 mt-3.5 text-sm"></div>
-                                <div className="pl-4 text-sm mt-2.5">Audits ($60,000)</div>
-                            </div>
-                            <div className="flex flex-row ">
-                                <div style={{ backgroundColor: '#FE2B2D', }} className="w-3 h-3 mt-3.5 text-sm"></div>
-                                <div className="pl-4 text-sm mt-2.5">Liquidity ($20,000)</div>
-                            </div>
-                            <div className="flex flex-row ">
-                                <div style={{ backgroundColor: '#FE5E5F', }} className="w-3 h-3 mt-3.5 text-sm"></div>
-                                <div className="pl-4 text-sm mt-2.5">Marketing ($50,000)</div>
-                            </div>
-                        </div>
-                    </div>
+                    <TokenPie data={piedata1}
+                        title="Pre-minted tokens distribution (100,000)"
+                        details={piedetail1}/>
+                    <TokenPie data={piedata2}
+                        title="Allocation of Funds"
+                        details={piedetail2}
+                        padding = "pr-24" />
                 </div>
             </div>
             <div className="border-bottom-4 border-solid border mt-20" style={{ borderColor: "#F3F3F3" }}></div>
@@ -177,7 +129,7 @@ export default function Home() {
                 <div className="flex flex-row justify-around pt-6 flex-wrap">
                     <div className="flex flex-col w-1/2">
                         <div className="border-solid border-b-4 border-light-blue pb-8" style={{ width: "100%" }}>Get in touch with us:</div>
-                        <div className="pt-5 flex flex-row flex-wrap">
+                        <div className="py-10 flex flex-row flex-wrap">
                             <img src="facebook.svg" className="pr-8"></img>
                             <img src="twitter.svg" className="pr-8"></img>
                             <img src="instg.svg" className="pr-8"></img>
@@ -189,12 +141,6 @@ export default function Home() {
                         <div className="mt-10">Terms</div>
                         <div>Privacy</div>
                         <div>Documentation</div>
-                    </div>
-                </div>
-                <div className="flex flex-row justify-around pt-10 ">
-
-                    <div className="flex flex-col leading-4" style={{ width: "110px" }}>
-
                     </div>
                 </div>
             </div>
