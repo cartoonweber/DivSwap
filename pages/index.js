@@ -5,6 +5,7 @@ import TimeLine from '../components/TimeLine';
 import Nova from '../components/Nova';
 import TokenPie from '../components/TokenPie';
 import { Line, Pie } from 'react-chartjs-2';
+import HeaderTopLine from './header-top-line';
 
 const piedata1 = {
     datasets: [{
@@ -50,20 +51,21 @@ const piedetail2 = ["Audits ($60,000)", "Liquidity ($20,000)", "Marketing ($50,0
 export default function Home() {
     return (
         <div className="relative">
+            <HeaderTopLine />
             <div style={{ backgroundColor: "#FAFAFA", paddingTop: "70px" }}>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center pagepadding">
                     <div className="text-4xl font-bold leading-10 title"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
                     <div className="mt-4 divswap"> EVER WONDERED WHAT LIES BEYOND THE MOON? </div>
                     <button className="rounded-3xl border-solid border px-5 py-3 mt-8 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button>
                 </div>
             </div>
-            <div className="pt-24" style={{ backgroundColor: "#FAFAFA" }}>
+            <div className="pt-24 " style={{ backgroundColor: "#FAFAFA" }}>
                 <div className="flex flex-col">
                     <div className="flex flex-col items-center">
                         <div className="text-4xl font-black leading-10 title"> DivSwap is DeFi 2.0</div>
                     </div>
-                    <div className="flex flex-row justify-around flex-wrap">
+                    <div className="flex flex-row defipadding justify-between flex-wrap px-36">
                         <DivSwapis title="DeFi 2.0 is Community" src="./community.svg">
                             DeFi 2.0 is full of energy! We don't take
                             ourselves too seriously (that's for TradFi!) So we sprinkle in a healthy dose of
@@ -88,14 +90,16 @@ export default function Home() {
                     <a href="#" className="font1 underline mt-6 text-center font-black">Find out more</a>
                 </div>
             </div>
-            <div className="mt-14">
+            <div className="mt-14 pagepadding">
                 <DotTitle>Your Funds are SAFU!</DotTitle>
-                <div className="mt-14 flex flex-row justify-around flex-wrap">
-                    {
-                        fundsimgs.map(data => {
-                            return <img className="mt-6" src={data} ></img>
-                        })
-                    }
+                <div className="mt-14 flex flex-col">
+                    <div className="flex flex-row justify-between px-36 flex-wrap fundpadding">
+                        {
+                            fundsimgs.map((data, index) => {
+                                return <img className="mt-6 fundimg" src={data}></img>
+                            })
+                        }
+                    </div>
                 </div>
                 <div className="mt-8 text-center">
                     <a href="#" className="font1 underline font-black">Find out more</a>
@@ -103,21 +107,21 @@ export default function Home() {
             </div>
             <div className="mt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokens</DotTitle>
-                <div className="mt-20 flex flex-row justify-around img1 flex-wrap">
+                <div className="mt-20 flex flex-row px-36 justify-between img1 flex-wrap novapadding">
                     <Nova title="NOVA" img="community.svg">Native Token</Nova>
                     <Nova title="dNOVA" img="dnova.svg">LP Farming Reward Token</Nova>
                 </div>
             </div>
             <div className="pt-28" style={{ backgroundColor: "#FAFAFA" }}>
                 <DotTitle>Tokenomics</DotTitle>
-                <div className="flex flex-row justify-around pt-7 flex-wrap">
+                <div className="flex flex-row justify-between mt-7 flex-wrap px-36 piepadding">
                     <TokenPie data={piedata1}
                         title="Pre-minted tokens distribution (100,000)"
-                        details={piedetail1}/>
+                        details={piedetail1} />
                     <TokenPie data={piedata2}
                         title="Allocation of Funds"
                         details={piedetail2}
-                        padding = "pr-24" />
+                        padding="pl-6" />
                 </div>
             </div>
             <div className="border-bottom-4 border-solid border mt-20" style={{ borderColor: "#F3F3F3" }}></div>
@@ -145,7 +149,7 @@ export default function Home() {
                 </div>
             </div>
             <div className=" bg-black absolute w-full bottom-0" style={{ backgroundColor: "#FAFAFA", height: "225px", zIndex: -1, bottom: "-70px" }} >
-                <div className="text-center" style={{ paddingTop: "180px", color: "#E5E4E4" }}>Copyright © 2021 . All rights reserved. DivSwap.io</div>
+                <div className="text-center font1" style={{ paddingTop: "180px" }}>Copyright © 2021 . All rights reserved. DivSwap.io</div>
             </div>
         </div>
     )

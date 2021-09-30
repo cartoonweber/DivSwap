@@ -1,6 +1,5 @@
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
-import HeaderTopLine from './header-top-line';
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Head from 'next/head'
@@ -12,7 +11,6 @@ function MyApp({ Component, pageProps }) {
             <Head >
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
             </Head>
-            <HeaderTopLine />
             <Component {...pageProps} />
         </div>
     )

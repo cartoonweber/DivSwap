@@ -23,4 +23,41 @@
     .pietitle{
         font-size : 16px;
     }
+    .fundimg{
+        width : 290px
+    }
+}
+@media screen and (max-width: 950px) {
+    .defipadding{
+        justify-content:center!important;
+        padding: 0px!important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .novapadding{
+        justify-content:center!important;
+        padding:0px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .piepadding{
+        justify-content:center!important;
+        padding:0px;
+    }
+}
+@media screen and (max-width: 1030px) {
+    .fundpadding{
+        justify-content:center!important;
+        padding:0px;
+    }
+}
+@media screen and (min-width: 1750px) {
+    .fundimg{
+        min-width : 500px
+    }
+}
+@media screen and (min-width: 2200px) {
+    .fundimg{
+        width : 600px
+    }
 }

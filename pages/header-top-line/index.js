@@ -1,9 +1,6 @@
-import Head from 'next/head'
-import './styles.module.css';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
-import { Collapse, CardText, Card } from "reactstrap";
 
 function getWindowDimensions() {
   let width, height;
@@ -74,7 +71,7 @@ export default function Home() {
         <div className="flex  flex-col fixed top-0 w-full z-20" style={{ backgroundColor: "#FAFAFA" }}>
           <div className="flex flex-row justify-around py-6">
             <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
-            <div></div>
+            <div></div><div></div>
             <a href="#" className="text-2xl leading-7" onClick={(e) => {
               e.preventDefault();
               setCollapseOpen(!collapseOpen);
@@ -100,15 +97,15 @@ export default function Home() {
   else
     navbar = (
       <div className="mt-12 pt-6 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }} ref = {ref}>
-        <div className="flex-1 pl-20">
+        <div className="flex-1 pl-36">
           <a href="#"><img src='logo.svg' />
             <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
           </a>
         </div>
 
-        <div className={isNav ? "z-20 py-6 flex flex-row font-black text-2xl leading-7 pr-20 fixed top-0 w-full" : "flex-1 pr-20 flex z-20 flex-row font-black text-2xl"}
+        <div className={isNav ? "z-20 py-6 flex flex-row font-black text-2xl leading-7 pr-36 fixed top-0 w-full" : "flex-1 pr-36 flex z-20 flex-row font-black text-2xl"}
           style={{ backgroundColor: "#FAFAFA" }}>
-          {isNav && <div className="flex-1 pl-20"></div>}
+          {isNav && <div className="flex-1 pl-36"></div>}
           <div className="flex-1 flex-row flex justify-around">
             <a href = "#" onClick = {(e) => {
               e.preventDefault();
