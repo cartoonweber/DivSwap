@@ -19,9 +19,11 @@ const Nova = ({ children, title, imgs, x, value }) => {
             </div>
             {
                 mtitle.map((data, i) => {
-                    return <div className="flex flex-row justify-between">
+                    return <div className="flex flex-row justify-between pb-1">
                         <div className={(i == mtitlei ? "font-bold " : "font-black ") + (i == mtitlei + 1 ? "text-xl " : "text-lg ")}>{data}</div>
-                        <div className={(i == mtitlei ? "font-bold " : "font-black ") + (i == mtitlei + 1 ? "text-xl " : "text-lg ") + "font1"}>{value[i]}</div>
+                        <div className="flex flex-row">
+                            {data === "APR" ? <img src="operation.svg" /> : ""}
+                            <div className={(i == mtitlei ? "font-bold " : "font-black ") + (i == mtitlei + 1 ? "text-xl " : "text-lg ") + "font1 pl-4"}>{value[i]}</div></div>
                     </div>
                 })
             }

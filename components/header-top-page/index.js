@@ -115,12 +115,14 @@ export default function TopPage({ children, active }) {
     navbar = (
       <div className="mt-12 pt-4 flex flex-row z-20" style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
         <div className=" pt-8">
-          <a href="#" >
-            <div className="flex flex-col items-center w-min">
-              <img src='logo.svg' />
-              <div className="font-normal text-4xl pt-3">DiveSwap</div>
-            </div>
-          </a>
+          <Link href="/">
+            <a href="#" >
+              <div className="flex flex-col items-center w-min">
+                <img src='logo.svg' />
+                <div className="font-normal text-4xl pt-3">DiveSwap</div>
+              </div>
+            </a>
+          </Link>
         </div>
 
         <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 justify-between w-full toppage"

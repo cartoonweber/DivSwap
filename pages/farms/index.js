@@ -63,13 +63,13 @@ export default function farms() {
                     }) : ""
                 }
             </div>
-            <div className="flex justify-center pt-10">
+            {state === 1 ? <div className="flex justify-center pt-10">
                 <FarmData
-                    title={titles1[imgs1.length-1]}
-                    imgs={imgs1[imgs1.length-1]}
-                    x={xs1[imgs1.length-1]}
-                    value={values1[imgs1.length-1]} />
-            </div>
+                    title={titles1[imgs1.length - 1]}
+                    imgs={imgs1[imgs1.length - 1]}
+                    x={xs1[imgs1.length - 1]}
+                    value={values1[imgs1.length - 1]} />
+            </div> : ""}
         </div>
     )
 }

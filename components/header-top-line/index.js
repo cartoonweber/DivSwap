@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import Link from "next/link";
 
 function getWindowDimensions() {
   let width, height;
@@ -98,12 +99,14 @@ export default function Home() {
     navbar = (
       <div className="mt-12 pt-6 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
         <div className="flex-1 pl-36">
-          <a href="#" >
-            <div className="flex flex-col items-center w-min">
-              <img src='logo.svg' />
-              <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
-            </div>
-          </a>
+          <Link href="/">
+            <a href="#" >
+              <div className="flex flex-col items-center w-min">
+                <img src='logo.svg' />
+                <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
+              </div>
+            </a>
+          </Link>
         </div>
 
         <div className={isNav ? "z-20 py-6 flex flex-row font-black text-2xl leading-7 pr-36 fixed top-0 w-full" : "flex-1 pr-36 flex z-20 flex-row font-black text-2xl"}
