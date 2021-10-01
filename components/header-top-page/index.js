@@ -65,6 +65,8 @@ export default function TopPage({ children, active }) {
     screenWidth > 1350 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
   useEffect(() => {
+
+    console.log(scroll);
     scroll > 40 ? setIsNav(true) : setIsNav(false);
   }, [scroll]);
   if (isMobile)
@@ -89,7 +91,7 @@ export default function TopPage({ children, active }) {
                   menus.map((data, i) => {
                     return <>
                       <Link href={"/" + data.toLowerCase()}>
-                        <a href="#" className={"py-2 " + (i === 0 ? "font1" : "")}>{data}</a>
+                        <a href="#" onClick={() => { window.scrollTo(0, 0); }} className={"py-2 " + (i === 0 ? "font1" : "")}>{data}</a>
                       </Link><hr />
                     </>
                   })
@@ -123,13 +125,13 @@ export default function TopPage({ children, active }) {
 
         <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 justify-between w-full toppage"
           : " flex z-20 flex-row font-bold text-base w-full justify-between"}
-          style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "157px" }}>
+          style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "158px" }}>
           <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
             {
               menus.map((data, i) => {
                 return <>
                   <Link href={"/" + data.toLowerCase()}>
-                    <a href="#" className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 px-5")}>{data}</a>
+                    <a href="#" onClick={() => { window.scrollTo(0, 0); }} className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 ")}>{data}</a>
                   </Link><hr />
                 </>
               })
