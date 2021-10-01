@@ -7,7 +7,7 @@ const Nova = ({ children, state, setState }) => {
                 <button className="absolute left-1 top-1 rounded-full w-9 h-9" style={{ backgroundColor: state ? "#5BC2C9" : "" }} onClick={() => { setState(1) }}></button>
                 <button className="absolute left-12 top-1 rounded-full w-9 h-9" style={{ backgroundColor: !state ? "#5BC2C9" : "" }} onClick={() => { setState(0) }}></button>
             </div>
-            <div className="pl-3 text-3xl font-bold">Stacked</div>
+            <div className="pl-3 text-3xl font-bold stackpage">Stacked</div>
         </>
     );
 };

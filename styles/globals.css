@@ -156,3 +156,18 @@
         height : fit-content!important;
     }
 }
+@media screen and (max-width: 625px) {
+    div>button
+    {
+        font-size: 16px!important;
+        padding-left : 5px!important;
+        padding-right : 5px!important;
+    }
+    .stackpage{
+        font-size: 16px!important;
+        padding: 0!important;
+    }
+    .activepage{
+        margin-left: 2px!important;
+    }
+}

@@ -40,7 +40,7 @@ export default function pools() {
             <div className="flex flex-wrap justify-center farmd pt-8">
                 {
                     state === 1 ? imgs.map((data, i) => {
-                        
+
                         return <div className="pt-10"><FarmData
                             title={titles[i]}
                             imgs={imgs[i]}
