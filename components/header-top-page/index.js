@@ -74,7 +74,7 @@ export default function TopPage({ children, active }) {
       <div className="mt-12" >
         <div className="flex flex-col fixed top-0  w-full z-20 left-0" style={{ backgroundColor: "#FAFAFA" }}>
           <div className="flex flex-row justify-between py-6 px-16">
-            <a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a>
+          <Link href="/dashboard"><a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a></Link>
             <a href="#" className="text-2xl " onClick={(e) => {
               e.preventDefault();
               setCollapseOpen(!collapseOpen);

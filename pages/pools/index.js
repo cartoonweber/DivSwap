@@ -6,6 +6,7 @@ import Stacked from "../../components/Stacked";
 import Active from "../../components/Active";
 import FarmData from "../../components/FarmData";
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import Animation from '../../components/Animation';
 
 export default function pools() {
     const [state, setState] = useState(1);
@@ -18,6 +19,7 @@ export default function pools() {
     return (
         <div className="relative px-16 dashboardpage" style={{ backgroundColor: "#FAFAFA" }}>
             <HeaderTopPage active={3} />
+            <Animation/>
             <div className="flex justify-between flex-row dashboarddotparent">
                 <div className="pt-5 dashboarddot" style={{ paddingLeft: "50%" }}>
                     <HorizontalDot />

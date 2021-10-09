@@ -3,11 +3,13 @@ import HeaderTopPage from '../../components/header-top-page';
 import HorizontalDot from '../../components/HorizontalDot';
 import Link from "next/link";
 import Stat from '../../components/Stat';
+import Animation from '../../components/Animation';
 const stattitle = ["NOVA Stats", "sNOVA Stats", "MoneyPot $309.09"]
 export default function dashboard() {
     return (
         <div className="relative px-16 dashboardpage" style={{ backgroundColor: "#FAFAFA" }}>
             <HeaderTopPage active = {0}/>
+            <Animation/>
             <div className="flex justify-between flex-row dashboarddotparent">
                 <div className="pt-5 dashboarddot" style={{ paddingLeft: "50%" }}>
                     <HorizontalDot />

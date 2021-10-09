@@ -4,9 +4,10 @@ import DotTitle from '../components/DotTitle';
 import TimeLine from '../components/TimeLine';
 import Nova from '../components/Nova';
 import TokenPie from '../components/TokenPie';
-import { Line, Pie } from 'react-chartjs-2';
+import Animation from '../components/Animation';
 import HeaderTopLine from '../components/header-top-line';
-import Link from 'next/link'
+import Link from 'next/link';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 
 const piedata1 = {
     datasets: [{
@@ -49,11 +50,14 @@ const piedata2 = {
 const fundsimgs = ["pec.svg", "a logo.svg", "gnosis safe.svg", "either.svg", "ctdsec.svg", "immu.svg"];
 const piedetail1 = ["Pre-Sale (90,000 NOVA)", "Initial Liquidity (10,000 NOVA)"];
 const piedetail2 = ["Audits ($60,000)", "Liquidity ($20,000)", "Marketing ($50,000)"];
+
 export default function Home() {
     return (
         <div className="relative">
             <HeaderTopLine />
+            <Animation />
             <div style={{ backgroundColor: "#FAFAFA", paddingTop: "70px" }}>
+
                 <div className="flex flex-col items-center pagepadding">
                     <div className="text-4xl font-bold leading-10 title"> DivSwap </div>
                     <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
