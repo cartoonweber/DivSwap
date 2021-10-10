@@ -133,6 +133,6 @@ export default function Animation() {
     }, []);
 
     return (
-        <canvas id="canvas" className="w-full absolute" style={{ left: "0px", top: "0px" }}></canvas>
+        <canvas id="canvas" className="w-full absolute" style={{ left: "0px", top: "0px", height: "515px" }}></canvas>
     )
 }
