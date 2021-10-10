@@ -100,7 +100,7 @@ export default function Home() {
       <div className="pt-24 flex" style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
         <div className={isNav ? "py-6 flex z-20 font-black text-2xl fixed top-0 w-full justify-around" : "flex-1 flex font-black text-2xl justify-around"}
           style={{ backgroundColor: "#FAFAFA" }}>
-          <a href="#" className="z-20">TOKENS</a>
+          <a href="/about" className="z-20">TOKENS</a>
           <a href="#" className="z-20">ROADMAP</a>
           <a href="#" className="z-20 font1 underline">DOCS</a>
           <a href="#" className="z-20 font1 underline">SOCIALS</a>

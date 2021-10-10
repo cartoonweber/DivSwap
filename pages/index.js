@@ -8,48 +8,6 @@ import Token from '../components/Token';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 
-const piedata1 = {
-    datasets: [{
-        data: [90000, 10000],
-        backgroundColor: [
-            '#5BC2C9',
-            '#77F4F7',
-        ],
-        hoverBackgroundColor: [
-            '#5BC2C9',
-            '#77F4F7',
-        ],
-        borderColor: [
-            '#5BC2C9',
-            '#77F4F7',
-        ]
-    }]
-};
-
-const piedata2 = {
-    datasets: [{
-        data: [60000, 20000, 50000],
-        backgroundColor: [
-            '#C41829',
-            '#FE2B2D',
-            '#FE5E5F'
-        ],
-        hoverBackgroundColor: [
-            '#C41829',
-            '#FE2B2D',
-            '#FE5E5F'
-        ],
-        borderColor: [
-            '#C41829',
-            '#FE2B2D',
-            '#FE5E5F'
-        ]
-    }]
-};
-const fundsimgs = ["pec.svg", "a logo.svg", "gnosis safe.svg", "either.svg", "ctdsec.svg", "immu.svg"];
-const piedetail1 = ["Pre-Sale (90,000 NOVA)", "Initial Liquidity (10,000 NOVA)"];
-const piedetail2 = ["Audits ($60,000)", "Liquidity ($20,000)", "Marketing ($50,000)"];
-
 export default function Home() {
     return (
         <div className="relative" style={{ backgroundColor: "#FAFAFA" }}>
@@ -65,7 +23,7 @@ export default function Home() {
                 DEX WITH BENEFITS
             </div>
             <div className="justify-center flex">
-                <Link href="/dashboard"><button className="rounded-3xl border-solid border px-5 py-3 mt-16 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button></Link>
+                <Link href="/dashboard"><button className="rounded-3xl border-2 border px-5 py-3 mt-16 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button></Link>
             </div>
             <div style={{ paddingTop: "200px" }} className="justify-around flex flex-wrap">
                 <div>
@@ -84,7 +42,7 @@ export default function Home() {
                         <br />
                         <div>Stake Divs, receive DivX, and get passively rewarded with FTM and FUSD every day!</div>
                     </div>
-                    <div className="px-5 py-3 border-2 border-black mt-20" style={{ borderRadius: "18px", background: "#C4C4C4", width: "fit-content" }}>
+                    <div className="px-5 py-3 border-2 border-black mt-20" style={{ borderRadius: "18px", background: "#C4C4C4", width: "fit-content", borderColor: "#4D4D4D" }}>
                         Read More
                     </div>
                 </div>
@@ -143,7 +101,7 @@ export default function Home() {
                     </Token>
                 </div>
                 <div className="flex justify-center">
-                    <div className="px-5 py-3 border-2 border-black mt-20 " style={{ borderRadius: "18px 0px", background: "#C4C4C4", width: "fit-content" }}>
+                    <div className="px-5 py-3 border-2 border-black mt-20 " style={{ borderRadius: "18px 0px", background: "#C4C4C4", width: "fit-content", borderColor: "#4D4D4D", }}>
                         Read More
                     </div>
                 </div>

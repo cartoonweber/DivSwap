@@ -133,7 +133,7 @@ export default function TopPage({ children, active }) {
                 return <>
                   <Link href={"/" + data.toLowerCase()}>
                     <a href="#" onClick={() => { window.scrollTo(0, 0); }} className={"topbutton z-20 " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 ")}>{data}</a>
-                  </Link><hr />
+                  </Link>
                 </>
               })
             }
