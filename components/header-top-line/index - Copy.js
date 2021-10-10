@@ -61,7 +61,7 @@ export default function Home() {
   const ref = useRef(null);
   let navbar;
   useEffect(() => {
-    screenWidth > 500 ? setIsMobile(false) : setIsMobile(true);
+    screenWidth > 1000 ? setIsMobile(false) : setIsMobile(true);
   }, [screenWidth]);
   useEffect(() => {
     scroll > 60 ? setIsNav(true) : setIsNav(false);
@@ -97,13 +97,27 @@ export default function Home() {
     )
   else
     navbar = (
-      <div className="pt-24 flex" style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
-        <div className={isNav ? "py-6 flex z-20 font-black text-2xl fixed top-0 w-full justify-around" : "flex-1 flex font-black text-2xl justify-around"}
+      <div className="pt-24 flex flex-row z-20 " style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
+        <div className="flex-1 pl-36">
+          <Link href="/">
+            <a href="#" >
+              <div className="flex flex-col items-center w-min">
+                <img src='logo.svg' />
+                <div className="font-normal text-4xl leading-10 pt-3">DiveSwap</div>
+              </div>
+            </a>
+          </Link>
+        </div>
+
+        <div className={isNav ? "z-20 py-6 flex flex-row font-black text-2xl leading-7 pr-36 fixed top-0 w-full" : "flex-1 pr-36 flex z-20 flex-row font-black text-2xl"}
           style={{ backgroundColor: "#FAFAFA" }}>
-          <a href="#" className="z-20">TOKENS</a>
-          <a href="#" className="z-20">ROADMAP</a>
-          <a href="#" className="z-20 font1 underline">DOCS</a>
-          <a href="#" className="z-20 font1 underline">SOCIALS</a>
+          {isNav && <div className="flex-1 pl-36"></div>}
+          <div className="flex-1 flex-row flex justify-around">
+            <a href="#" >TOKENS</a>
+            <a href="#">ROADMAP</a>
+            <a href="#" className="font1 underline">DOCS</a>
+            <a href="#" className="font1 underline">SOCIALS</a>
+          </div>
         </div>
       </div >
     )

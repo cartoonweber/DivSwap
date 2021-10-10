@@ -67,14 +67,14 @@ export default function TopPage({ children, active }) {
   useEffect(() => {
 
     console.log(scroll);
-    scroll > 40 ? setIsNav(true) : setIsNav(false);
+    scroll > 60 ? setIsNav(true) : setIsNav(false);
   }, [scroll]);
   if (isMobile)
     navbar = (
       <div className="mt-12" >
-        <div className="flex flex-col fixed top-0  w-full z-20 left-0" style={{ backgroundColor: "#FAFAFA" }}>
+        <div className="flex flex-col fixed top-0 w-full z-20 left-0" style={{ backgroundColor: "#FAFAFA" }}>
           <div className="flex flex-row justify-between py-6 px-16">
-          <Link href="/dashboard"><a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a></Link>
+            <Link href="/dashboard"><a href="#"><img src='logo.svg' style={{ width: "30px" }} /></a></Link>
             <a href="#" className="text-2xl " onClick={(e) => {
               e.preventDefault();
               setCollapseOpen(!collapseOpen);
@@ -113,10 +113,10 @@ export default function TopPage({ children, active }) {
     )
   else
     navbar = (
-      <div className="mt-12 pt-4 flex flex-row z-20" style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
-        <div className=" pt-8">
+      <div className="pt-24 flex flex-row" style={{ backgroundColor: "#FAFAFA" }} ref={ref}>
+        <div className=" pt-8 z-20">
           <Link href="/">
-            <a href="#" >
+            <a href="#">
               <div className="flex flex-col items-center w-min">
                 <img src='logo.svg' />
                 <div className="font-normal text-4xl pt-3">DiveSwap</div>
@@ -124,16 +124,15 @@ export default function TopPage({ children, active }) {
             </a>
           </Link>
         </div>
-
-        <div className={isNav ? "z-20 py-3 flex flex-row font-bold text-base fixed top-0 justify-between w-full toppage"
-          : " flex z-20 flex-row font-bold text-base w-full justify-between"}
+        <div className={isNav ? " py-3 flex flex-row font-bold text-base z-20 fixed top-0 justify-between w-full toppage"
+          : " flex flex-row font-bold text-base w-full justify-between"}
           style={{ backgroundColor: "#FAFAFA", paddingLeft: isNav && "158px" }}>
           <div className="flex justify-between" style={{ width: "calc(100% - 350px)" }}>
             {
               menus.map((data, i) => {
                 return <>
                   <Link href={"/" + data.toLowerCase()}>
-                    <a href="#" onClick={() => { window.scrollTo(0, 0); }} className={"topbutton " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 ")}>{data}</a>
+                    <a href="#" onClick={() => { window.scrollTo(0, 0); }} className={"topbutton z-20 " + (i === 0 ? "font1 " : "") + (i === active ? "active" : "pt-2.5 ")}>{data}</a>
                   </Link><hr />
                 </>
               })
@@ -143,7 +142,7 @@ export default function TopPage({ children, active }) {
             <div className="items-start pt-1.5"><img src="community.svg" style={{ width: "30px" }} /></div>
             <div className="topbutton pt-2.5 pl-2 pr-6">$0.892</div>
             <Link href="/dashboard">
-              <a href="#" className="topbutton active">CONNECT WALLET</a>
+              <a href="#" className="topbutton active z-20">CONNECT WALLET</a>
             </Link>
           </div>
         </div>

@@ -1,13 +1,12 @@
 
-import DivSwapis from '../components/DivSwapis'
 import DotTitle from '../components/DotTitle';
 import TimeLine from '../components/TimeLine';
-import Nova from '../components/Nova';
-import TokenPie from '../components/TokenPie';
 import Animation from '../components/Animation';
 import HeaderTopLine from '../components/header-top-line';
-import Link from 'next/link';
+import HorizontalDot from '../components/HorizontalDot';
+import Token from '../components/Token';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import Link from 'next/link';
 
 const piedata1 = {
     datasets: [{
@@ -53,88 +52,108 @@ const piedetail2 = ["Audits ($60,000)", "Liquidity ($20,000)", "Marketing ($50,0
 
 export default function Home() {
     return (
-        <div className="relative">
+        <div className="relative" style={{ backgroundColor: "#FAFAFA" }}>
             <HeaderTopLine />
             <Animation />
-            <div style={{ backgroundColor: "#FAFAFA", paddingTop: "70px" }}>
-
-                <div className="flex flex-col items-center pagepadding">
-                    <div className="text-4xl font-bold leading-10 title"> DivSwap </div>
-                    <div className="back1 text-2xl font-bold leading-7 px-2.5 py-1.5 mt-4"> Daily Dividends AMM  </div>
-                    <div className="mt-4 divswap"> EVER WONDERED WHAT LIES BEYOND THE MOON? </div>
-                    <Link href="/dashboard"><button className="rounded-3xl border-solid border px-5 py-3 mt-8 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button></Link>
-                </div>
+            <div style={{ paddingLeft: "12%" }} className="pt-20">
+                <HorizontalDot /></div>
+            <div className="items-center flex flex-col">
+                <img src="logo.svg" style={{ width: "90px" }} />
+                <div className="text-4xl font-semibold pt-10">DivSwap</div>
             </div>
-            <div className="pt-24 " style={{ backgroundColor: "#FAFAFA" }}>
-                <div className="flex flex-col">
-                    <div className="flex flex-col items-center">
-                        <div className="text-4xl font-black leading-10 title"> DivSwap is DeFi 2.0</div>
-                    </div>
-                    <div className="flex flex-row defipadding justify-between flex-wrap px-36">
-                        <DivSwapis title="DeFi 2.0 is Community" src="./community.svg">
-                            DeFi 2.0 is full of energy! We don't take
-                            ourselves too seriously (that's for TradFi!) So we sprinkle in a healthy dose of
-                            education and true community
-                            building - both locally and globally. The future of Finance belongs to the
-                            People - and we are building towards a
-                            full-pledged DAO to help shape the future of DivSwap.
-                        </DivSwapis>
-                        <DivSwapis title="DeFi 2.0 is Security" src="./security.svg">
-                            DeFi 2.0 is creating the new standard for SAFU! We have three completed audits before we launch - including Peckshield,
-                            arguably the most trusted name in blockchain security. And that's just part of our Strategic Security Stack! Everyday, our Team Members dedicate ourselves to evaluating/adding to our security features in order to provide the safest space to invest in all of DeFi!
-                        </DivSwapis>
-                        <DivSwapis title="DeFi 2.0 is Dynamic" src="./dynamic.svg">
-                            DeFi 2.0 is creative - we embrace new ideas! Giving back 75% of all transaction fees
-                            collected in our platform as daily dividends to our shareholders is a revolutionary idea! We employ the most innovative solutions,
-                            including gamification, in order to produce
-                            results that exceed expectations. With
-                            DivSwap, everyone wins - from the
-                            smallest investor to the biggest whales!
-                        </DivSwapis>
-                    </div>
-                    <a href="#" className="font1 underline mt-6 text-center font-black">Find out more</a>
-                </div>
+            <div style={{ paddingTop: "110px" }} className="text-center text-8xl font-bold benefit">
+                DEX WITH BENEFITS
             </div>
-            <div className="mt-14 pagepadding">
-                <DotTitle>Your Funds are SAFU!</DotTitle>
-                <div className="mt-14 flex flex-col">
-                    <div className="flex flex-row justify-between px-36 flex-wrap fundpadding">
-                        {
-                            fundsimgs.map((data, index) => {
-                                return <img className="mt-6 fundimg" src={data}></img>
-                            })
-                        }
+            <div className="justify-center flex">
+                <Link href="/dashboard"><button className="rounded-3xl border-solid border px-5 py-3 mt-16 back1" style={{ borderColor: "#4D4D4D" }}>Go To Dapp</button></Link>
+            </div>
+            <div style={{ paddingTop: "200px" }} className="justify-around flex flex-wrap">
+                <div>
+                    <img src="communityblue.svg" />
+                </div>
+                <div style={{ width: "500px" }} className="px-4">
+                    <div className="font-black text-3xl">
+                        About Divswap
+                    </div>
+                    <div className="font-bold pt-6">
+                        <div>Divswap is the first decentralised exchange on Fantom Mainnet to redistribute transaction fees directly back to platform users.</div>
+                        <br />
+                        <div>Most other platforms offer reward tokens that get dumped whenever the farming reward pool starts drying up.</div>
+                        <br />
+                        <div>The Divswap protocol provides a sustainable solution to this issue by distributing the majority of profits back to users via a dividend system.</div>
+                        <br />
+                        <div>Stake Divs, receive DivX, and get passively rewarded with FTM and FUSD every day!</div>
+                    </div>
+                    <div className="px-5 py-3 border-2 border-black mt-20" style={{ borderRadius: "18px", background: "#C4C4C4", width: "fit-content" }}>
+                        Read More
                     </div>
                 </div>
-                <div className="mt-8 text-center">
-                    <a href="#" className="font1 underline font-black">Find out more</a>
+            </div>
+            <div style={{ marginTop: "130px", backgroundImage: "url(back1.png)" }} className="bg-cover">
+                <div style={{ paddingTop: "120px" }}>
+                    <DotTitle>The Divswap Protocol</DotTitle></div>
+                <div className="flex justify-center pt-12" style={{ paddingBottom: "200px" }}>
+                    <div style={{ maxWidth: "500px" }} className="font-bold protocol px-4">
+                        <div>In the Divswap farms and staking pools, you're rewarded with the Divswap (DIVs) token, like any other DEX. What makes Divswap different is DIVs big brother: DIVx.</div>
+                        <br />
+                        <div>Holding this token makes you a shareholder in Divswap, giving you dividends in FTM and FUSD straight to your wallet every day.</div>
+                        <br />
+                        <div>The protocol collects 75% of all platform fees in a big pot and redistributes them to all DIVx holders. Your share of this daily reward pool increases with your share of DIVx supply.</div>
+                        <br />
+                        <div>By becoming a DIVx shareholder you have a stake in the platform’s success. Word of mouth from shareholders alone has the potential to create an upward demand spiral that could shake up the entire defi-space: the more users the platform has the more rewards users will receive.</div>
+                    </div>
                 </div>
             </div>
-            <div className="mt-28" style={{ backgroundColor: "#FAFAFA" }}>
-                <DotTitle>Tokens</DotTitle>
-                <div className="mt-20 flex flex-row px-36 justify-between img1 flex-wrap novapadding">
-                    <Nova title="NOVA" img="community.svg">Native Token</Nova>
-                    <Nova title="dNOVA" img="dnova.svg">LP Farming Reward Token</Nova>
-                </div>
-            </div>
-            <div className="pt-28" style={{ backgroundColor: "#FAFAFA" }}>
+            <div >
                 <DotTitle>Tokenomics</DotTitle>
-                <div className="flex flex-row justify-between mt-7 flex-wrap px-36 piepadding">
-                    <TokenPie data={piedata1}
-                        title="Pre-minted tokens distribution (100,000)"
-                        details={piedetail1} />
-                    <TokenPie data={piedata2}
-                        title="Allocation of Funds"
-                        details={piedetail2}
-                        padding="pl-6" />
+                <div className="flex justify-around pt-7 flex-wrap">
+                    <Token title="Divswap Token (DIVs)" img="community.svg">
+                        <div className="font-bold">
+                            <div>DIVs is the native platform of Divswap. It is used for farming and staking.</div>
+                            <br />
+                            <br />
+                            <div>The initial Divs supply on Fantom Mainnet is 20000.  20 400 Tokens were minted but 400 Divs were instantly burnt due to the autoburn mechanism.</div>
+                            <br />
+                            <br />
+                            <div>DIVs has an automatic 2% burn on all transactions and transfers.</div>
+                            <br />
+                            <br />
+                            <div>Initial Liquidity provided to the platform was $20 000. This was distributed equally between DIVs/FTM & DIVx/FUSD</div>
+                            <br />
+                            <br />
+                            <div>In future DIVs will become a multi-chain token that exists on multiple blockchains.</div>
+                        </div>
+                    </Token>
+                    <Token title=" Divswap Governance Token (DIVx)" img="dnova.svg">
+                        <div className="font-bold">
+                            <div>DIVx is DIVs rarer and more valuable big brother.Owning it gives you</div>
+                            <div>a unique opportunity to become an early shareholder in a major new defi protocol.</div>
+                            <br />
+                            <div>Not only do DIVx holders receive a share of profits from the DEX now, they will receive a share in all future fees and profits generated by the platform as it grows in to a multi-chain liquidity aggregator providing cross-chain token swaps.</div>
+                            <br />
+                            <div>DIVx can't be bought  like a normal token, it can only be farmed. We believe in rewarding users who provide liquidity. DIVx rewards are delivered automatically, just by holding the token.</div>
+                            <br />
+                            <div>Rewards come from three different sources: </div>
+                            <div>Deposit fees</div>
+                            <div>Swap fees</div>
+                            <div>75% of any other platform revenue.</div>
+                            <br />
+                            <div>DIVx can’t be sold but it can be swapped for DIVs anytime at a ratio of 1DIVs to 0.7Divx.Those who hold DIVx for 30 days can swap with a 1: 1 ratio.</div>
+                        </div>
+                    </Token>
                 </div>
-            </div>
-            <div className="border-bottom-4 border-solid border mt-20" style={{ borderColor: "#F3F3F3" }}></div>
-            <div className="mt-24">
+                <div className="flex justify-center">
+                    <div className="px-5 py-3 border-2 border-black mt-20 " style={{ borderRadius: "18px 0px", background: "#C4C4C4", width: "fit-content" }}>
+                        Read More
+                    </div>
+                </div>
+            </div >
+            <div className="mt-12 bg-cover pt-24 pb-48" style={{ backgroundImage: "url(back1.png)" }}>
                 <DotTitle>Roadmap</DotTitle>
                 <TimeLine></TimeLine>
+
             </div>
-            <div className="mt-28 text-white" style={{ backgroundColor: "#4D4D4D" }}>
+            <div className="mt-4 text-white" style={{ backgroundColor: "#4D4D4D" }}>
                 <div className="flex flex-row justify-around pt-6 flex-wrap">
                     <div className="flex flex-col w-1/2">
                         <div className="border-solid border-b-4 border-light-blue pb-8" style={{ width: "100%" }}>Get in touch with us:</div>
@@ -156,6 +175,6 @@ export default function Home() {
             <div className=" bg-black absolute w-full bottom-0" style={{ backgroundColor: "#FAFAFA", height: "225px", zIndex: -1, bottom: "-70px" }} >
                 <div className="text-center font1" style={{ paddingTop: "180px" }}>Copyright © 2021 . All rights reserved. DivSwap.io</div>
             </div>
-        </div>
+        </div >
     )
 }

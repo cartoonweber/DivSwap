@@ -3,7 +3,7 @@ import React from 'react';
 const Detail = ({ children, ltitle, ldetail,  rtitle, rdetail, font, index }) => {
     
     const rfont = font + (index % 2 ? " font1": ""), lfont = font + (index % 2 ? "": " font1");
-    const maxW = 230 + (index === 5 ? 80 : 0) + "px";
+    const maxW = 400 +  "px";
     return (
         <div className="flex flex-row pt-14" >
             <div className="flex flex-col pr-12 flex-1 items-end text-right">

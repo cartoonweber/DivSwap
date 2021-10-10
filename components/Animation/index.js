@@ -26,7 +26,7 @@ export default function Animation() {
 
     function resizeReset() {
         w = canvas.width = window.innerWidth;
-        h = canvas.height = 300;
+        h = canvas.height = 515;
     }
 
     function initialiseElements() {
@@ -130,9 +130,9 @@ export default function Animation() {
     };
     useEffect(() => {
         init()
-    }, [init]);
+    }, []);
 
     return (
-        <canvas id="canvas" style = {{width : "100%"}}></canvas>
+        <canvas id="canvas" className="w-full absolute" style={{ left : "0px", top: "0px" }}></canvas>
     )
 }

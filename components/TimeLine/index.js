@@ -62,10 +62,10 @@ const TimeLine = ({ children }) => {
         screenWidth > 800 ? setIsMobile(false) : setIsMobile(true);
     }, [screenWidth]);
     if (isMobile) font = "text-1xl";
-    const ltitle = ["MAY 2021", "Pre-sale", "JUNE 2021", "We are live!", "", "DivSwap Nova NFT Shop!", "",];
-    const ldetail = ["", "Pre-sale of the NOVA token to raise funds for initial liquidity and audits.", "", "Launch of DivSwap dApp", "", "One-stop-shop NFT Minter +Viewer + Marketplace", "",];
-    const rtitle = ["Medium article", "JUNE 2021", "Smart contracts audits", "AUGUST 2021", "DivSwap Nova Lift Off", "","DivSwap Nova goes MultiChain"];
-    const rdetail = ["Laying down our mission and vision.", "", "Audits of the DivSwap.io smart contracts by reputable third parties.", "", "Develop novel use cases for NOVA and unveil DivSwap Nova Launchpad", "", "Build a bridge and launch DivSwap Nova across multiple chains"]
+    const ltitle = ["Oct 2021", "Multichain Bridge Integration", "Q1 2022", "Multichain Liquidity Aggregation", "Q3 2022"];
+    const rtitle = ["Fair Launch on FTM Mainnet", "Q4 2021", "Crosschain Swap Integration", "Q2 2022", "Governance Protocol Integration"];
+    const ldetail = ["", "Goal: Divswap users can move tokens between multiple chains", "", "Goal: Divswap users can seamlessly swap tokens between multiple chains and multiple liquidity pool. The AMM returnd the best possible price,", ""];
+    const rdetail = ["Goal: Divswap is a secure and stable platform with a vibrant community. ", "", "Goal: Divswap users can seamlessly swap tokens between two chains,", "", "Goal: DIVx holders can vote on all decisions regarding the future direction of Divswap,"]
     return (
 
         <div className="flex flex-col relative">
@@ -73,6 +73,7 @@ const TimeLine = ({ children }) => {
                 <div className="bg-black absolute border-l z-0" style={{ height: "100%", left: "50%", top: "60px", borderColor: "red" }}></div>
                 {
                     ltitle.map((data, i) => {
+                        if (i === 4) return ""
                         return <Detail ltitle={ltitle[i]}
                             ldetail={ldetail[i]}
                             rtitle={rtitle[i]}
@@ -82,12 +83,12 @@ const TimeLine = ({ children }) => {
                     })
                 }
             </div>
-            <Detail ltitle="DivSwap NovaDAO"
-                ldetail="Create a full-pledged DAO to usher the next evolution of DivSwap Nova into the future"
-                rtitle= ""
-                rdetail=""
+            <Detail ltitle={ltitle[4]}
+                ldetail={ldetail[4]}
+                rtitle={rtitle[4]}
+                rdetail={rdetail[4]}
                 font={font}
-                index={7} />
+                index={4} />
         </div>
     );
 };
